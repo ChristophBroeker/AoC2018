@@ -8,30 +8,39 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class MainTest {
 
     @Test
-    @DisplayName("Test aA")
-    void compareUnits() {
+    @DisplayName("Analyze: aA")
+    void analyzePolymer() {
         String testString = "aA";
         assertEquals("", Main.analyzePolymer(testString));
     }
 
     @Test
-    @DisplayName("Test abBA")
-    void compareUnitsOne() {
+    @DisplayName("Analyze: abBA")
+    void analyzePolymerOne() {
         String testString = "abBA";
         assertEquals("", Main.analyzePolymer(testString));
     }
 
     @Test
-    @DisplayName("Test aabAAB")
-    void compareUnitsSecond() {
+    @DisplayName("Analyze: aabAAB")
+    void analyzePolymerSecond() {
         String testString = "aabAAB";
         assertEquals("aabAAB", Main.analyzePolymer(testString));
     }
 
     @Test
-    @DisplayName("Test dabAcCaCBAcCcaDA")
-    void compareUnitsThird() {
+    @DisplayName("Analyze: dabAcCaCBAcCcaDA")
+    void analyzePolymerThird() {
         String testString = "dabAcCaCBAcCcaDA";
         assertEquals("dabCBAcaDA", Main.analyzePolymer(testString));
     }
+
+    @Test
+    @DisplayName("Reduce and analyze: dabAcCaCBAcCcaDA")
+    void reduceAndAnalyzePolymer() {
+        String testString = "dabAcCaCBAcCcaDA";
+        assertEquals(4, Main.reduceAndAnalyzePolymer(testString));
+
+    }
+
 }
